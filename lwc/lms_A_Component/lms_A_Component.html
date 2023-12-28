@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Chit-Chat Messanger ">
+   <strong> Screen A</strong>  
+
+
+        <lightning-layout >
+            <lightning-layout-item size="6" class="slds-box">
+                <div class="slds-var-p-around_small" style="height:10rem"> 
+               
+               <strong>Send Message to B</strong>
+               
+                                <lightning-input label="Send Message" placeholder="type here to Send LMS-B....." type="text"
+                                    onchange={changeAhandler}  value={sendValue}></lightning-input>
+                                    <br/>
+                                
+                                <lightning-layout>
+                                    <lightning-layout-item class="slds-var-p-around-medium">
+                                        <lightning-button label="Publish Data" onclick={publisherHandlertoB} variant="brand">
+                                        </lightning-button>
+        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+        
+                            </div>
+                           
+                           
+            </lightning-layout-item>
+    
+                </lightning-layout>
+
+
+<lightning-layout>
+    <lightning-layout-item size="6">
+
+
+    </lightning-layout-item>
+</lightning-layout>
+<!-- arrayOflmsdatapassRec is message coming from LMS B -->
+
+{arrayOflmsdatapassRec}
+<div class="slds-box">
+    <template lwc:if={arrayOflmsdatapassRec}>
+        <template for:each={arrayOflmsdatapassRec} for:item="msg">
+            <p key={msg.text}>{arrayOflmsdatapassRec}</p>
+        </template>
+    </template>
+</div>
+<div class="slds-box slds-var-p-around_medium">
+      
+  
+   <h1><strong>Message Receveive</strong></h1><br/>
+   <div class="slds-box slds-border_top slds-border_bottom slds-border_left slds-border_right">
+       Message Receveive From LMS-B==>   <strong>{lmsdatapassRec}</strong>
+   </div>
+
+ </div>
+    </lightning-card>
+</template>
